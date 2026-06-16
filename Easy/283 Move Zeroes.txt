@@ -1,0 +1,23 @@
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int left = 0; //Pointer for placing a non zero element
+
+        for(int right = 0 ; right < nums.length ; right++){
+            if(nums[right]!=0){
+                //Swap elements if right pointer finds a non zero
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;;
+                //Move left pointer forward
+
+            }
+        }
+    }
+}
+
+/*this is the first question in two pointers for me 
+
+we are using Traversing pointers and also need to know that we can't directly
+set the nums[left] value to the temp value of right se we 
+initialize a new variable temp to hold the nums[left] value*/
