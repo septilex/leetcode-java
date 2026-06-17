@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 class Solution {
     public boolean isPalindrome(String s) {
 
@@ -39,3 +40,46 @@ and join all the letters to ONE single word
 Then same pattern as 344 Reverse String
 
 us while() loop to check iif left is same as the right or not and move until middle*/
+=======
+    class Solution {
+        public boolean isPalindrome(String s) {
+
+            String str = "";
+
+            for (char ch : s.toCharArray()) {
+                if (Character.isLetterOrDigit(ch)) {
+                    str += Character.toLowerCase(ch);
+                }
+            }
+
+            int left = 0;
+            int right = str.length() - 1;
+
+            while (left < right) {
+
+                if (str.charAt(left) != str.charAt(right)) {
+                    return false;
+                }
+
+                left++;
+                right--;
+            }
+
+            return true;
+        }
+    }
+
+    /* First loop through every character in the given array and remove 
+    spaces
+    commas
+    :
+    special characters
+    capital letters
+
+    and join all the letters to ONE single word 
+
+
+    Then same pattern as 344 Reverse String
+
+    us while() loop to check iif left is same as the right or not and move until middle*/
+>>>>>>> Stashed changes
