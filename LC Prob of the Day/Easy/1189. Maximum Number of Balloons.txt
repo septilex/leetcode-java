@@ -1,0 +1,32 @@
+class Solution {
+    public int maxNumberOfBalloons(String text) {
+        
+        // Create 26 lockers for 26 letters, all starting at 0
+        int freq[] = new int[26];
+        
+        // Go through every letter in the text one by one
+        for(char ch: text.toCharArray()){
+            
+            // Find the locker number of that letter and add 1 to it
+            freq[ch-'a']++;
+        }
+        
+        // Start with A's count as the minimum
+        int min = freq['a'-'a'];
+        
+        // Compare B's count with min, smaller one becomes new min
+        min = Math.min(freq['b'-'a'], min);
+        
+        // Compare L's count/2 with min (balloon needs 2 L's so divide by 2)
+        min = Math.min(freq['l'-'a']/2, min);
+        
+        // Compare O's count/2 with min (balloon needs 2 O's so divide by 2)
+        min = Math.min(freq['o'-'a']/2, min);
+        
+        // Compare N's count with min, smaller one becomes new min
+        min = Math.min(freq['n'-'a'], min);
+        
+        // Return the final answer (how many balloons we can make)
+        return min;
+    }
+}
